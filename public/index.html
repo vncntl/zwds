@@ -1,28 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test iztro</title>
-</head>
-<body>
-    <h1>Zi Wei Dou Shu Test</h1>
-    <button id="generateBtn">Generate Astrolabe</button>
-    <pre id="output"></pre>
+<script type="module">
+    import { astro } from './lib/index.js'; // Adjust the path if necessary
 
-    <script type="module">
-        // Try importing from the correct path
-        import { astro } from '../dist/iztro.js'; // Change this if necessary
-
-        document.getElementById("generateBtn").addEventListener("click", function () {
-            try {
-                const astrolabe = astro.bySolar('2000-08-16', 2, 'male', true, 'en-US');
-                document.getElementById('output').innerText = JSON.stringify(astrolabe, null, 2);
-            } catch (error) {
-                document.getElementById('output').innerText = "Error: " + error.message;
-                console.error(error);
-            }
-        });
-    </script>
-</body>
-</html>
+    document.getElementById("generateBtn").addEventListener("click", function () {
+        try {
+            const astrolabe = astro.bySolar('2000-08-16', 2, 'male', true, 'en-US');
+            document.getElementById('output').innerText = JSON.stringify(astrolabe, null, 2);
+        } catch (error) {
+            document.getElementById('output').innerText = "Error: " + error.message;
+            console.error(error);
+        }
+    });
+</script>
