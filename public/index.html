@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test iztro</title>
+</head>
+<body>
+    <h1>Zi Wei Dou Shu Test</h1>
+    <button onclick="generateChart()">Generate Astrolabe</button>
+    <pre id="output"></pre>
+
+    <script type="module">
+        import { astro } from '../iztro.js'; // Adjust the path if necessary
+
+        function generateChart() {
+            const astrolabe = astro.bySolar('2000-08-16', 2, 'male', true, 'en-US');
+            document.getElementById('output').innerText = JSON.stringify(astrolabe, null, 2);
+        }
+    </script>
+</body>
+</html>
