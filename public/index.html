@@ -10,8 +10,9 @@
     <button id="generateBtn">Generate Astrolabe</button>
     <pre id="output"></pre>
 
+    <script src="https://unpkg.com/iztro/dist/iztro.min.js"></script>
     <script type="module">
-        import { astro } from '../src/index.ts'; // This is the correct path for iztro
+        const astro = iztro.astro
 
         document.getElementById("generateBtn").addEventListener("click", function () {
             try {
